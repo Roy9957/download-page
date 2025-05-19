@@ -10,7 +10,7 @@ function App() {
         className="app-image"
       />
       <a
-        href="/download/MOBE.apk"
+        href="/Download/MOBE.apk"
         className="download-button"
         download
       >
