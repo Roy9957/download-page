@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { faTimes, faDownload } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaTimes, FaDownload } from 'react-icons/fa';
 import './App.css';
 
 const App: React.FC = () => {
@@ -9,24 +8,24 @@ const App: React.FC = () => {
     const particlesContainer = document.getElementById('particles');
     const particleCount = 30;
     
-    if (particlesContainer) {
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        
-        // Random properties
-        const size = Math.random() * 10 + 5;
-        const posX = Math.random() * 100;
-        const duration = Math.random() * 10 + 10;
-        const delay = Math.random() * 5;
-        
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.left = `${posX}%`;
-        particle.style.bottom = `-${size}px`;
-        particle.style.animationDuration = `${duration}s`;
-        particle.style.animationDelay = `${delay}s`;
-        
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      
+      // Random properties
+      const size = Math.random() * 10 + 5;
+      const posX = Math.random() * 100;
+      const duration = Math.random() * 10 + 10;
+      const delay = Math.random() * 5;
+      
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${posX}%`;
+      particle.style.bottom = `-${size}px`;
+      particle.style.animationDuration = `${duration}s`;
+      particle.style.animationDelay = `${delay}s`;
+      
+      if (particlesContainer) {
         particlesContainer.appendChild(particle);
       }
     }
@@ -37,7 +36,7 @@ const App: React.FC = () => {
     const closeBtn = document.querySelector('.close-btn');
     if (image && closeBtn) {
       image.classList.add('zoomed');
-      closeBtn.style.display = 'block';
+      closeBtn.classList.add('visible');
       document.body.style.overflow = 'hidden';
     }
   };
@@ -47,22 +46,19 @@ const App: React.FC = () => {
     const closeBtn = document.querySelector('.close-btn');
     if (image && closeBtn) {
       image.classList.remove('zoomed');
-      closeBtn.style.display = 'none';
+      closeBtn.classList.remove('visible');
       document.body.style.overflow = '';
     }
   };
 
   return (
-    <div className="app">
+    <div className="app-container">
       <div className="title">AD GAME</div>
       <div className="image-placeholder" onClick={handleImageClick}></div>
-      <div className="close-btn" onClick={handleCloseClick}>
-        <FontAwesomeIcon icon={faTimes} />
-      </div>
-      <a href="download/MOBE.apk" className="download-btn">
-        <FontAwesomeIcon icon={faDownload} className="download-icon" /> DOWNLOAD
-      </a>
+      <div className="close-btn" onClick={handleCloseClick}><FaTimes /></div>
+      <a href="#" className="download-btn"><FaDownload /> DOWNLOAD</a>
       <div className="footer">Apurobo's GAME</div>
+
       <div className="particles" id="particles"></div>
     </div>
   );
