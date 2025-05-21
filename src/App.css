@@ -17,6 +17,11 @@
   animation: gradientShift 15s ease infinite;
   background-size: 200% 200%;
 }
+.sub{
+  font-family: 'Press Start 2P', cursive;
+  color: #3CDE44;
+  font-size: 0.8rem;
+ }
 
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
