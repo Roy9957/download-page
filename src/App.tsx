@@ -56,7 +56,7 @@ const App: React.FC = () => {
       <div className="title">AD GAME</div>
       <div className="image-placeholder" onClick={handleImageClick}></div>
       <div className="close-btn" onClick={handleCloseClick}><FaTimes /></div>
-      <a href="download/MOBE.apk" className="download-btn"><FaDownload /> DOWNLOAD</a>
+      <a href="Download/MOBE.apk" className="download-btn"><FaDownload /> DOWNLOAD</a>
       <div className="sub">Download this game and enjoy</div>
   
 
